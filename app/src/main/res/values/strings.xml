@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">We are PKK</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_we_are_pkk">we are pkk</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_reset">Reset</string>
+    <string name="sign_up">Create Account</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="send">Send</string>
+    <string name="back">Back</string>
+    <string name="email">Email</string>
+    <string name="forget_password_page">FORGET PASSWORD PAGE</string>
+    <string name="register_page">REGISTER PAGE</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="personal_section">Personal Section</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
