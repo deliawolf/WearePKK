@@ -1,5 +1,6 @@
 package com.example.wearepkk;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.konten, new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
+
         }
     }
 

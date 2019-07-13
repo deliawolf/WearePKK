@@ -62,8 +62,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/txt_password"
-                android:paddingBottom="0dp"
-                app:errorEnabled="true">
+                android:paddingBottom="0dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit_text"
