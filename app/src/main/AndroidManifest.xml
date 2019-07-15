@@ -12,9 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".PediaActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".ShopActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LupaPasswordActivity" />
         <activity

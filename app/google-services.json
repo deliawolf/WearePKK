@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "398503217328",
+    "firebase_url": "https://wearepkk-866a6.firebaseio.com",
+    "project_id": "wearepkk-866a6",
+    "storage_bucket": "wearepkk-866a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398503217328:android:07b236f6f2bdb875",
+        "android_client_info": {
+          "package_name": "com.example.wearepkk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398503217328-o104hqr8h42skue9faa40bu107fe1sng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wearepkk",
+            "certificate_hash": "a2fe8d9387b0e71dc875d7bbe4dd4ccfbadba197"
+          }
+        },
+        {
+          "client_id": "398503217328-eqrlq3ovasasmemdpeb89lta2s9kelqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAxFx93Utgd6X20EZeqMD3YdDDaiikZ9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398503217328-eqrlq3ovasasmemdpeb89lta2s9kelqc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

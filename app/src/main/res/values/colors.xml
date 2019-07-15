@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0ea5c6</color>
-    <color name="colorPrimaryDark">#0ea5c6</color>
+    <color name="colorPrimaryDark">@null</color>
     <color name="colorAccent">#0ea5c6</color>
     <color name="btncolor">#0ea5c6</color>
     <color name="colortextbutton">#FFFFFF</color>
     <color name="menu">#000000</color>
     <color name="efect_btn">#6200EE</color>
     <color name="productGridBackgroundColor">#0ea5c6</color>
-
+    <color name="light_gray_line">#ededed</color>
+    <color name="deep_purple">#7c4dff</color>
+    <color name="material_yellow">#ffb300</color>
+    <color name="material_green">#00bfa5</color>
+    <color name="pink_accent">#ff4081</color>
 
 
     <color name="bg_splashscreen">#0ea5c6</color>
