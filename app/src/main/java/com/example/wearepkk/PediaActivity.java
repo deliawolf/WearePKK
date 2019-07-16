@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
-
 import com.example.wearepkk.adapter.PediaAdapter;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -24,11 +24,10 @@ public class PediaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedia);
-
         setUpRecyclerView();
     }
     private void setUpRecyclerView(){
-        Query query = notebookRef.orderBy("priority", Query.Direction.DESCENDING);
+        Query query = notebookRef.orderBy("title", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<PediaModel> options = new FirestoreRecyclerOptions.Builder<PediaModel>()
                 .setQuery(query,PediaModel.class)

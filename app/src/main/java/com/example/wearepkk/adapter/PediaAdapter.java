@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.wearepkk.R;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -23,7 +22,6 @@ public class PediaAdapter extends FirestoreRecyclerAdapter<PediaModel, PediaAdap
     protected void onBindViewHolder(@NonNull PediaHolder pediaHolder, int i, @NonNull PediaModel pediaModel) {
         pediaHolder.textViewTitle.setText(pediaModel.getTitle());
         pediaHolder.textViewDescription.setText(pediaModel.getDescription());
-        pediaHolder.textViewPriority.setText(String.valueOf(pediaModel.getPriority()));
     }
 
     @NonNull
@@ -38,14 +36,11 @@ public class PediaAdapter extends FirestoreRecyclerAdapter<PediaModel, PediaAdap
 
         TextView textViewTitle;
         TextView textViewDescription;
-        TextView textViewPriority;
 
         public PediaHolder(@NonNull View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title_pedia);
             textViewDescription = itemView.findViewById(R.id.text_view_desc_pedia);
-            textViewPriority = itemView.findViewById(R.id.text_view_priority_pedia);
-
         }
     }
 }
