@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+
 import com.example.wearepkk.adapter.PediaAdapter;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -24,6 +27,16 @@ public class PediaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedia);
+
+        com.google.android.material.floatingactionbutton.FloatingActionButton add_pedia_btn = findViewById(R.id.button_add_note_pedia);
+
+
+        add_pedia_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PediaActivity.this,PediaAddActivity.class));
+            }
+        });
         setUpRecyclerView();
     }
     private void setUpRecyclerView(){
