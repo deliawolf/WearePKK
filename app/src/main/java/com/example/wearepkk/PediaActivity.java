@@ -8,10 +8,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.wearepkk.adapter.PediaAdapter;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -27,17 +30,8 @@ public class PediaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedia);
-
-        com.google.android.material.floatingactionbutton.FloatingActionButton add_pedia_btn = findViewById(R.id.button_add_note_pedia);
-
-
-        add_pedia_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PediaActivity.this,PediaAddActivity.class));
-            }
-        });
         setUpRecyclerView();
+
     }
     private void setUpRecyclerView(){
         Query query = notebookRef.orderBy("title", Query.Direction.ASCENDING);
@@ -67,3 +61,4 @@ public class PediaActivity extends AppCompatActivity {
         adapter.stopListening();
     }
 }
+

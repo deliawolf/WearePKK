@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:layout_marginTop="5dp">
-
-    <LinearLayout
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:layout_marginTop="2dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/id_about_card_event"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#daf1f9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp">
@@ -34,8 +31,20 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:textStyle="bold"
+                    android:textAllCaps="true"
                     android:layout_marginTop="10dp"
+                    android:textSize="@dimen/about_description_text_size"
                     android:text="About"/>
+
+                <Button
+                    android:id="@+id/show_more2"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="normal"
+                    android:textAllCaps="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More"/>
 
                 <TextView
                     android:id="@+id/text_view_location_event"
@@ -46,6 +55,7 @@
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/background_dark"
                     android:text="everything about us"/>
+
                 <TextView
                     android:id="@+id/text_view_date_event"
                     android:layout_width="match_parent"
@@ -54,4 +64,3 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>

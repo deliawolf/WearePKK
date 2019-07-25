@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,208 +7,179 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/curve_toolbar_bg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SELAMAT DATANG"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/about_description_text_size"
+            android:textStyle="bold"
+            android:layout_margin="10dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ededed"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
+
         <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="50dp"
             android:padding="10dp"
-            android:gravity="center"
-            android:id="@+id/ll">
-            <LinearLayout
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:orientation="horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/id_pedia_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/id_pedia_card"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    app:strokeColor="@color/productGridBackgroundColor"
-                    app:strokeWidth="1dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="#f6edcf"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/cerclebackgroundpurple"
+                        android:padding="10dp"
+                        android:src="@drawable/book" />
 
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/cerclebackgroundpurple"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_pedia" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="PKKPedia"/>
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-        <LinearLayout
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="PKKPedia"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/id_shop_card"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:strokeColor="@color/productGridBackgroundColor"
-                app:strokeWidth="1dp"
-                android:layout_margin="10dp">
+                android:clickable="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="#f0dab1"
+                android:foreground="?android:attr/selectableItemBackground">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundgreen"
-                        android:src="@drawable/ic_shop"
-                        android:padding="10dp"
-                        android:layout_margin="10dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginTop="2dp"
-                        android:text="Shop"
-                        android:layout_marginBottom="5dp"/>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-
-            <LinearLayout
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_event_card"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:strokeColor="@color/productGridBackgroundColor"
-                app:strokeWidth="1dp"
-                android:layout_margin="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpink"
-                        android:src="@drawable/ic_event"
                         android:layout_margin="10dp"
-                        android:padding="10dp"/>
+                        android:background="@drawable/cerclebackgroundgreen"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_shop" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="5dp"
-                        android:text="Event"/>
+                        android:text="Shop"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
-        <LinearLayout
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_account_card"
-                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/id_event_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="#daf1f9"
+                app:cardCornerRadius="10dp"
                 android:clickable="true"
-                android:layout_width="160dp"
-                app:strokeColor="@color/productGridBackgroundColor"
-                app:strokeWidth="1dp"
-                android:layout_height="160dp"
-                android:layout_margin="10dp">
+                android:foreground="?android:attr/selectableItemBackground">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/cerclebackgroundyellow"
-                        android:src="@drawable/ic_account"
-                        android:padding="10dp"/>
+                        android:background="@drawable/cerclebackgroundpink"
+                        android:padding="10dp"
+                        android:src="@drawable/event" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Event"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/id_about_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp"
+                android:clickable="true"
+                app:cardBackgroundColor="#a4d7e1"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/cerclebackgroundblue"
+                        android:padding="10dp"
+                        android:src="@drawable/about" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Account"/>
+                        android:layout_marginBottom="5dp"
+                        android:text="About"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/id_about_card"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            app:strokeColor="@color/productGridBackgroundColor"
-            app:strokeWidth="1dp"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/cerclebackgroundblue"
-                    android:src="@drawable/ic_about"
-                    android:padding="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:text="About"/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

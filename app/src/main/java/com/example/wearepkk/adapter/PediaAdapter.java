@@ -1,5 +1,6 @@
 package com.example.wearepkk.adapter;
 
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,7 @@ public class PediaAdapter extends FirestoreRecyclerAdapter<PediaModel, PediaAdap
     @Override
     protected void onBindViewHolder(@NonNull PediaHolder pediaHolder, int i, @NonNull PediaModel pediaModel) {
         pediaHolder.textViewTitle.setText(pediaModel.getTitle());
-        pediaHolder.textViewDescription.setText(pediaModel.getDescription());
+        pediaHolder.textViewDescription.setText(Html.fromHtml(pediaModel.getDescription()));
     }
 
     @NonNull

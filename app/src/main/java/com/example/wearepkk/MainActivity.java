@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     private CardView shopcard, eventcard, accountcard, pediacard, aboutcard;
 
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,17 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         shopcard = findViewById(R.id.id_shop_card);
         eventcard = findViewById(R.id.id_event_card);
-        accountcard = findViewById(R.id.id_account_card);
         pediacard = findViewById(R.id.id_pedia_card);
         aboutcard = findViewById(R.id.id_about_card);
 
         shopcard.setOnClickListener(this);
         eventcard.setOnClickListener(this);
-        accountcard.setOnClickListener(this);
         pediacard.setOnClickListener(this);
         aboutcard.setOnClickListener(this);
-
-        setupFirebaseAuth();
 
     }
 
@@ -55,9 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.id_event_card:
                 i = new Intent(this, EventActivity.class);startActivity(i);
-                break;
-            case R.id.id_account_card:
-                i = new Intent(this, AccountActivity.class);startActivity(i);
                 break;
             case R.id.id_pedia_card:
                 i = new Intent(this, PediaActivity.class);startActivity(i);
@@ -73,58 +64,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_signout, menu);
 
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.Signout:
-                signOut();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void signOut(){
-        Log.d(TAG, "signOut: signing out");
-        FirebaseAuth.getInstance().signOut();
-    }
-
-
-    private void setupFirebaseAuth(){
-        Log.d(TAG, "setupFirebaseAuth: started.");
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-
-                } else {
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        };
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
-        }
     }
 }

@@ -26,7 +26,6 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        com.google.android.material.floatingactionbutton.FloatingActionButton add_pedia_btn = findViewById(R.id.button_add_note_event);
         setUpRecyclerView();
     }
     private void setUpRecyclerView(){
