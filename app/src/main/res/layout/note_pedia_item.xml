@@ -13,7 +13,6 @@
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             app:cardCornerRadius="10dp"
-            android:clickable="true"
             app:cardBackgroundColor="#f6edcf"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
@@ -36,16 +35,6 @@
                     android:layout_marginTop="10dp"
                     android:text="About"/>
 
-                <Button
-                    android:id="@+id/show_more"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
-                    android:textStyle="normal"
-                    android:textAllCaps="false"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="More"/>
-
                 <TextView
                     android:id="@+id/text_view_desc_pedia"
                     android:layout_width="match_parent"
@@ -54,7 +43,9 @@
                     android:padding="5dp"
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/background_dark"
-                    android:text="everything about us" />
+                    android:text="everything about us"
+                    android:ellipsize="end"
+                    android:maxLines="1"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

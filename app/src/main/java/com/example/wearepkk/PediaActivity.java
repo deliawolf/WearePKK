@@ -5,26 +5,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.provider.ContactsContract;
+import android.util.Log;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wearepkk.adapter.PediaAdapter;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class PediaActivity extends AppCompatActivity {
+import java.util.List;
+
+public class PediaActivity extends AppCompatActivity{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("PKKpedia");
-
     private PediaAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,27 @@ public class PediaActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+        adapter.setOnItemClickListener(new PediaAdapter.OnItemCLickListener() {
+            @Override
+            public void OnItemClick(DocumentSnapshot documentSnapshot, int position) {
+                PediaModel pediaModel = documentSnapshot.toObject(PediaModel.class);
+                String id = documentSnapshot.getId();
+                String path = documentSnapshot.getReference().getPath();
+
+                String title = adapter.getItem(position).getTitle();
+                String desc = adapter.getItem(position).getDescription();
+
+                Intent intent = new Intent(PediaActivity.this,PediaDetailActivity.class);
+
+                intent.putExtra("title", title);
+                intent.putExtra("description", desc);
+                intent.putExtra("id",id);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override

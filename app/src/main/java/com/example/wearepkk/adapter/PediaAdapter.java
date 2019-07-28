@@ -4,6 +4,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,8 +13,12 @@ import com.example.wearepkk.R;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class PediaAdapter extends FirestoreRecyclerAdapter<PediaModel, PediaAdapter.PediaHolder> {
+
+    private OnItemCLickListener listener;
+
 
     public PediaAdapter(@NonNull FirestoreRecyclerOptions<PediaModel> options) {
         super(options);
@@ -42,6 +47,23 @@ public class PediaAdapter extends FirestoreRecyclerAdapter<PediaModel, PediaAdap
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title_pedia);
             textViewDescription = itemView.findViewById(R.id.text_view_desc_pedia);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.OnItemClick(getSnapshots().getSnapshot(position),position);
+                    }
+
+                }
+            });
         }
+    }
+    public interface OnItemCLickListener {
+        void OnItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+    public void setOnItemClickListener(OnItemCLickListener listener){
+        this.listener = listener;
     }
 }
