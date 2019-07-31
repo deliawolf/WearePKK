@@ -10,8 +10,10 @@ import android.view.View;
 
 import com.example.wearepkk.adapter.EventAdapter;
 import com.example.wearepkk.model.EventModel;
+import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -29,7 +31,7 @@ public class EventActivity extends AppCompatActivity {
         setUpRecyclerView();
     }
     private void setUpRecyclerView(){
-        Query query = notebookRef.orderBy("title_event", Query.Direction.ASCENDING);
+        Query query = notebookRef.orderBy("timestamp_urut", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<EventModel> options2 = new FirestoreRecyclerOptions.Builder<EventModel>()
                 .setQuery(query, EventModel.class)
@@ -42,6 +44,32 @@ public class EventActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+        adapter.setOnItemClickListener(new EventAdapter.OnItemCLickListener(){
+            @Override
+            public void OnItemClick(DocumentSnapshot documentSnapshot, int position){
+                EventModel eventModel = documentSnapshot.toObject(EventModel.class);
+                String id = documentSnapshot.getId();
+                String path = documentSnapshot.getReference().getPath();
+
+                String title = adapter.getItem(position).getTitle_Event();
+                String desc = adapter.getItem(position).getDescription_event();
+                String location = adapter.getItem(position).getLocation();
+                String time = adapter.getItem(position).getTimestamp();
+                String dress = adapter.getItem(position).getDress_code();
+
+                Intent intent = new Intent(EventActivity.this,EventDetailActivity.class);
+
+                intent.putExtra("title_event", title);
+                intent.putExtra("description_event", desc);
+                intent.putExtra("id",id);
+                intent.putExtra("location",location);
+                intent.putExtra("timestamp",time);
+                intent.putExtra("dress_code",dress);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     protected void onStart() {

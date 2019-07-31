@@ -26,7 +26,5 @@ public class PediaDetailActivity extends AppCompatActivity {
 
         textView1.setText(Html.fromHtml(pedia_title));
         textView2.setText(Html.fromHtml(pedia_desc));
-
-
     }
 }

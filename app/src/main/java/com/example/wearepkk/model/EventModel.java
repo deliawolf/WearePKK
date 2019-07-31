@@ -6,12 +6,32 @@ public class EventModel {
     private String title_event;
     private String location;
     private String timestamp;
+    private String description_event;
+    private String dress_code;
 
 
-    public EventModel(String title_Event, String location, String timestamp) {
-        this.title_event = title_Event;
+    public EventModel(String title_event, String location, String timestamp, String description_event, String dress_code) {
+        this.title_event = title_event;
         this.location = location;
         this.timestamp = timestamp;
+        this.description_event = description_event;
+        this.dress_code = dress_code;
+    }
+
+    public String getDescription_event() {
+        return description_event;
+    }
+
+    public void setDescription_event(String description_event) {
+        this.description_event = description_event;
+    }
+
+    public String getDress_code() {
+        return dress_code;
+    }
+
+    public void setDress_code(String dress_code) {
+        this.dress_code = dress_code;
     }
 
     public EventModel() {

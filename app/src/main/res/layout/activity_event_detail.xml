@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PediaDetailActivity"
-    android:orientation="vertical"
-    android:background="#f6edcf">
+    tools:context=".EventDetailActivity"
+    android:background="#daf1f9">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -33,6 +33,28 @@
                 android:text="DESCRIPTION"
                 android:layout_margin="10dp"
                 android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/tampil_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:layout_margin="10dp"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/tampil_dress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:layout_margin="10dp"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/tampil_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:layout_margin="10dp"
+                android:textStyle="normal"/>
+
 
         </LinearLayout>
 

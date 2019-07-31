@@ -27,12 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        shopcard = findViewById(R.id.id_shop_card);
         eventcard = findViewById(R.id.id_event_card);
         pediacard = findViewById(R.id.id_pedia_card);
         aboutcard = findViewById(R.id.id_about_card);
 
-        shopcard.setOnClickListener(this);
         eventcard.setOnClickListener(this);
         pediacard.setOnClickListener(this);
         aboutcard.setOnClickListener(this);
@@ -44,9 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i;
 
         switch (view.getId()) {
-            case R.id.id_shop_card:
-                i = new Intent(this, ShopActivity.class);startActivity(i);
-                break;
             case R.id.id_event_card:
                 i = new Intent(this, EventActivity.class);startActivity(i);
                 break;

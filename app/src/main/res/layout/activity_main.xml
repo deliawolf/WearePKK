@@ -75,42 +75,6 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_shop_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="#f0dab1"
-                android:foreground="?android:attr/selectableItemBackground">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/cerclebackgroundgreen"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_shop" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="5dp"
-                        android:text="Shop"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/id_event_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
