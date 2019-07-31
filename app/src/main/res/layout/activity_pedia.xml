@@ -18,15 +18,12 @@
         app:cardBackgroundColor="#f6edcf"
         android:layout_height="wrap_content">
 
-        <SearchView
-            android:id="@+id/search_bar"
+        <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:queryHint="Cari Judul"
-            android:queryHint="Pencarian"
-            app:defaultQueryHint="Pencarian">
+            android:id="@+id/search"
+            app:queryHint="Fitur ini Coming soon"/>
 
-        </SearchView>
     </com.google.android.material.card.MaterialCardView>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/cari_bar"

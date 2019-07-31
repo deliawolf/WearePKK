@@ -1,26 +1,14 @@
 package com.example.wearepkk;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.customview.widget.ViewDragHelper;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.net.*;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-
-import com.google.android.material.card.MaterialCardView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("No Internet Connection");
-        builder.setMessage("Tolong nyalakan wifi anda atau data mobile anda, untuk meload data aplikasi");
+        builder.setMessage("Tolong nyalakan wifi anda / mobile anda, untuk meload data aplikasi");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -95,11 +83,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
                 default:break;
         }
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_signout, menu);
-
-        return true;
     }
 }

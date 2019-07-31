@@ -1,16 +1,11 @@
 package com.example.wearepkk;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-
 import com.example.wearepkk.adapter.EventAdapter;
 import com.example.wearepkk.model.EventModel;
-import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;

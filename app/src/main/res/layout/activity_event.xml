@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:queryHint="Cari Judul"
-            android:queryHint="Pencarian"
+            android:queryHint="Fitur ini coming soon"
             app:defaultQueryHint="Pencarian">
 
         </SearchView>

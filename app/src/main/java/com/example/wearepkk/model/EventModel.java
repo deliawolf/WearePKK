@@ -1,7 +1,5 @@
 package com.example.wearepkk.model;
 
-import com.google.type.Date;
-
 public class EventModel {
     private String title_event;
     private String location;

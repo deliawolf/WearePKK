@@ -1,17 +1,9 @@
 package com.example.wearepkk;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.Log;
-import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.wearepkk.adapter.PediaAdapter;
 import com.example.wearepkk.model.PediaModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -20,7 +12,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-import java.util.List;
 
 public class PediaActivity extends AppCompatActivity{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();

@@ -3,7 +3,6 @@ package com.example.wearepkk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 
 import mehdi.sakout.aboutpage.AboutPage;
@@ -22,7 +21,8 @@ public class AboutActivity extends AppCompatActivity {
                 .addGroup("Connect with us")
                 .addEmail("aditya.maulana.rojakt@gmail.com")
                 .addFacebook("aditya.rozak")
-                .addPlayStore("com.ideashower.readitlater.pro")
+                .addPlayStore("")
+                .addGitHub("deliawolf")
                 .create();
 
         setContentView(aboutPage);

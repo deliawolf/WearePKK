@@ -2,9 +2,6 @@ package com.example.wearepkk;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.viewpager.widget.ViewPager;
-
 import com.cuneytayyildiz.onboarder.OnboarderActivity;
 import com.cuneytayyildiz.onboarder.OnboarderPage;
 import com.cuneytayyildiz.onboarder.utils.OnboarderPageChangeListener;
